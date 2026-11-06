@@ -27,29 +27,29 @@
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen">
+<body class="bg-[#f7f5f0] text-stone-800 min-h-screen">
   <!-- 頁首導覽 -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+  <header class="bg-[#fcfbf9]/90 backdrop-blur border-b border-stone-200/80 sticky top-0 z-30 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
       <div class="flex items-center space-x-3">
-        <div class="p-2.5 bg-blue-600 text-white rounded-xl shadow-md">
+        <div class="p-2.5 bg-amber-700 text-white rounded-xl shadow-md">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path>
           </svg>
         </div>
         <div>
-          <h1 class="text-xl font-bold text-slate-900 tracking-tight">標準檢量線分析計算機</h1>
-          <p class="text-xs text-slate-500 font-medium">線性回歸分析・儀器訊號換算・自動品管警示</p>
+          <h1 class="text-xl font-bold text-stone-900 tracking-tight">標準檢量線分析計算機</h1>
+          <p class="text-xs text-stone-500 font-medium">線性回歸分析・儀器訊號換算・自動品管警示</p>
         </div>
       </div>
       <div class="flex items-center gap-2">
-        <button id="btnResetDefault" type="button" class="px-3.5 py-1.5 text-xs font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-lg transition-all border border-slate-200 flex items-center gap-1.5">
+        <button id="btnResetDefault" type="button" class="px-3.5 py-1.5 text-xs font-semibold text-stone-700 bg-stone-100 hover:bg-stone-200 rounded-lg transition-all border border-stone-300/80 flex items-center gap-1.5">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
           </svg>
           載入測試資料
         </button>
-        <button onclick="window.print()" type="button" class="px-3.5 py-1.5 text-xs font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-lg transition-all border border-blue-200 flex items-center gap-1.5">
+        <button onclick="window.print()" type="button" class="px-3.5 py-1.5 text-xs font-semibold text-amber-800 bg-amber-100/70 hover:bg-amber-100 rounded-lg transition-all border border-amber-200 flex items-center gap-1.5">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
           </svg>
@@ -66,29 +66,29 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       
       <!-- 左側：標準濃度輸入 (5 ~ 8 組) -->
-      <section class="lg:col-span-6 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 space-y-5">
-        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+      <section class="lg:col-span-6 bg-white rounded-2xl shadow-sm border border-stone-200 p-6 space-y-5">
+        <div class="flex items-center justify-between border-b border-stone-100 pb-3">
           <div>
-            <h2 class="text-base font-bold text-slate-800 flex items-center gap-2">
+            <h2 class="text-base font-bold text-stone-800 flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
               標準品濃度與訊號
             </h2>
-            <p class="text-xs text-slate-500 mt-0.5">提供 5 至 8 組標準點進行線性回歸</p>
+            <p class="text-xs text-stone-500 mt-0.5">提供 5 至 8 組標準點進行線性回歸</p>
           </div>
-          <span id="stdCountBadge" class="text-xs font-medium px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">目前共 5 組</span>
+          <span id="stdCountBadge" class="text-xs font-medium px-2.5 py-1 bg-stone-100 text-stone-700 rounded-md">目前共 5 組</span>
         </div>
 
         <div class="overflow-x-auto">
           <table class="w-full text-left text-sm">
             <thead>
-              <tr class="text-xs font-semibold text-slate-500 uppercase bg-slate-50 border-y border-slate-100">
+              <tr class="text-xs font-semibold text-stone-500 uppercase bg-[#fbf9f5] border-y border-stone-200">
                 <th class="py-2.5 px-3 w-12 text-center">#</th>
                 <th class="py-2.5 px-3">標準濃度 (µg/L) <span class="text-red-500">*</span></th>
                 <th class="py-2.5 px-3">儀器訊號 (Y) <span class="text-red-500">*</span></th>
                 <th class="py-2.5 px-3 w-16 text-center">操作</th>
               </tr>
             </thead>
-            <tbody id="stdTableBody" class="divide-y divide-slate-100">
+            <tbody id="stdTableBody" class="divide-y divide-stone-100">
               <!-- 動態生成 rows -->
             </tbody>
           </table>
@@ -97,13 +97,13 @@
         <!-- 輔助訊息與操作按鈕 -->
         <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
           <div class="flex items-center gap-2">
-            <button id="btnAddStdRow" type="button" class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 px-3 py-2 rounded-lg border border-blue-200 transition">
+            <button id="btnAddStdRow" type="button" class="inline-flex items-center gap-1.5 text-xs font-semibold text-stone-700 bg-stone-100 hover:bg-stone-200 px-3 py-2 rounded-lg border border-stone-300 transition">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
               </svg>
               新增一列 (最多 8 組)
             </button>
-            <span id="stdLimitMsg" class="text-xs text-slate-400"></span>
+            <span id="stdLimitMsg" class="text-xs text-stone-400"></span>
           </div>
 
           <button id="btnCalculate" type="button" class="w-full sm:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
@@ -117,39 +117,39 @@
 
       <!-- 右側：回歸指標與方程式 -->
       <section class="lg:col-span-6 space-y-6">
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 space-y-5">
-          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div class="bg-white rounded-2xl shadow-sm border border-stone-200 p-6 space-y-5">
+          <div class="flex items-center justify-between border-b border-stone-100 pb-3">
             <div>
-              <h2 class="text-base font-bold text-slate-800 flex items-center gap-2">
+              <h2 class="text-base font-bold text-stone-800 flex items-center gap-2">
                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
                 回歸統計參數
               </h2>
-              <p class="text-xs text-slate-500 mt-0.5">以最小平方法 (OLS) 計算，數值顯示 6 位有效數字</p>
+              <p class="text-xs text-stone-500 mt-0.5">以最小平方法 (OLS) 計算，數值顯示 6 位有效數字</p>
             </div>
             <div id="r2StatusBadge" class="hidden text-xs font-bold px-2.5 py-1 rounded-full"></div>
           </div>
 
           <!-- 回歸方程式顯示牌 -->
-          <div class="bg-gradient-to-r from-slate-900 to-slate-800 text-white rounded-xl p-4 shadow-inner">
-            <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">回歸直線方程式 (y = ax + b)</div>
-            <div id="equationDisplay" class="text-lg sm:text-xl font-mono font-semibold tracking-wide text-blue-200">
+          <div class="bg-gradient-to-r from-stone-900 to-stone-800 text-white rounded-xl p-4 shadow-inner">
+            <div class="text-xs uppercase tracking-wider text-stone-400 font-semibold mb-1">回歸直線方程式 (y = ax + b)</div>
+            <div id="equationDisplay" class="text-lg sm:text-xl font-mono font-semibold tracking-wide text-amber-200">
               y = 0.0800000 · x + 0.00400000
             </div>
           </div>
 
           <!-- 關鍵統計數據 Cards -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3.5">
-              <span class="text-xs font-medium text-slate-500">斜率 (Slope, a)</span>
-              <p id="slopeValue" class="text-base font-bold font-mono text-slate-800 mt-1">0.0800000</p>
+            <div class="bg-[#fcfbf9] border border-stone-200/90 rounded-xl p-3.5">
+              <span class="text-xs font-medium text-stone-500">斜率 (Slope, a)</span>
+              <p id="slopeValue" class="text-base font-bold font-mono text-stone-800 mt-1">0.0800000</p>
             </div>
-            <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3.5">
-              <span class="text-xs font-medium text-slate-500">截距 (Intercept, b)</span>
-              <p id="interceptValue" class="text-base font-bold font-mono text-slate-800 mt-1">0.00400000</p>
+            <div class="bg-[#fcfbf9] border border-stone-200/90 rounded-xl p-3.5">
+              <span class="text-xs font-medium text-stone-500">截距 (Intercept, b)</span>
+              <p id="interceptValue" class="text-base font-bold font-mono text-stone-800 mt-1">0.00400000</p>
             </div>
-            <div id="r2Container" class="bg-slate-50 border border-slate-200/80 rounded-xl p-3.5 transition-colors">
-              <span class="text-xs font-medium text-slate-500">決定係數 (R²)</span>
-              <p id="r2Value" class="text-base font-bold font-mono text-slate-800 mt-1">1.00000</p>
+            <div id="r2Container" class="bg-[#fcfbf9] border border-stone-200/90 rounded-xl p-3.5 transition-colors">
+              <span class="text-xs font-medium text-stone-500">決定係數 (R²)</span>
+              <p id="r2Value" class="text-base font-bold font-mono text-stone-800 mt-1">1.00000</p>
             </div>
           </div>
 
@@ -166,25 +166,25 @@
           </div>
 
           <!-- 檢量線濃度範圍資訊 -->
-          <div class="text-xs text-slate-500 flex items-center justify-between px-1">
-            <span>檢量線有效區間：<strong id="calRangeSpan" class="text-slate-700">0.00 ~ 50.0 µg/L</strong></span>
-            <span>點數：<span id="validPointsCount" class="font-bold text-slate-700">5</span> 點</span>
+          <div class="text-xs text-stone-500 flex items-center justify-between px-1">
+            <span>檢量線有效區間：<strong id="calRangeSpan" class="text-stone-700">0.00 ~ 50.0 µg/L</strong></span>
+            <span>點數：<span id="validPointsCount" class="font-bold text-stone-700">5</span> 點</span>
           </div>
         </div>
       </section>
     </div>
 
     <!-- 中間區塊：Chart 散佈圖與擬合線 -->
-    <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 space-y-4">
-      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-100 pb-3">
+    <section class="bg-white rounded-2xl shadow-sm border border-stone-200 p-6 space-y-4">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-stone-100 pb-3">
         <div>
-          <h2 class="text-base font-bold text-slate-800 flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+          <h2 class="text-base font-bold text-stone-800 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-600"></span>
             檢量線散佈圖與回歸直線
           </h2>
-          <p class="text-xs text-slate-500 mt-0.5">X 軸：標準濃度 (µg/L) ｜ Y 軸：儀器訊號 (Response)</p>
+          <p class="text-xs text-stone-500 mt-0.5">X 軸：標準濃度 (µg/L) ｜ Y 軸：儀器訊號 (Response)</p>
         </div>
-        <div class="flex items-center gap-3 text-xs text-slate-600">
+        <div class="flex items-center gap-3 text-xs text-stone-600">
           <div class="flex items-center gap-1.5">
             <span class="w-3 h-3 rounded-full bg-blue-600 inline-block"></span>
             <span>標準點</span>
@@ -206,25 +206,25 @@
     </section>
 
     <!-- 下方區塊：未知樣品換算計算機 -->
-    <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 space-y-5">
-      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-slate-100 pb-3">
+    <section class="bg-white rounded-2xl shadow-sm border border-stone-200 p-6 space-y-5">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-stone-100 pb-3">
         <div>
-          <h2 class="text-base font-bold text-slate-800 flex items-center gap-2">
+          <h2 class="text-base font-bold text-stone-800 flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
             未知樣品定量換算
           </h2>
-          <p class="text-xs text-slate-500 mt-0.5">
+          <p class="text-xs text-stone-500 mt-0.5">
             公式：濃度 = (儀器訊號 − 截距) ÷ 斜率 × 稀釋倍數
           </p>
         </div>
         <div class="flex items-center gap-2.5">
-          <button id="btnCopyExcel" type="button" class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 px-3.5 py-2 rounded-lg border border-emerald-200 transition">
+          <button id="btnCopyExcel" type="button" class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 px-3.5 py-2 rounded-lg border border-emerald-200 transition">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
             </svg>
             複製結果至 Excel
           </button>
-          <button id="btnAddSampleRow" type="button" class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 px-3.5 py-2 rounded-lg border border-blue-200 transition">
+          <button id="btnAddSampleRow" type="button" class="inline-flex items-center gap-1.5 text-xs font-semibold text-stone-700 bg-stone-100 hover:bg-stone-200 px-3.5 py-2 rounded-lg border border-stone-300 transition">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
             </svg>
@@ -236,7 +236,7 @@
       <div class="overflow-x-auto">
         <table class="w-full text-left text-sm">
           <thead>
-            <tr class="text-xs font-semibold text-slate-500 uppercase bg-slate-50 border-y border-slate-100">
+            <tr class="text-xs font-semibold text-stone-500 uppercase bg-[#fbf9f5] border-y border-stone-200">
               <th class="py-2.5 px-3 w-10 text-center">#</th>
               <th class="py-2.5 px-3 min-w-[140px]">樣品名稱</th>
               <th class="py-2.5 px-3 min-w-[130px]">儀器訊號 (Y) <span class="text-red-500">*</span></th>
@@ -247,7 +247,7 @@
               <th class="py-2.5 px-3 w-16 text-center">操作</th>
             </tr>
           </thead>
-          <tbody id="sampleTableBody" class="divide-y divide-slate-100">
+          <tbody id="sampleTableBody" class="divide-y divide-stone-100">
             <!-- 樣品列動態生成 -->
           </tbody>
         </table>
@@ -266,7 +266,7 @@
 
   </main>
 
-  <footer class="text-center py-6 text-xs text-slate-400 border-t border-slate-200 mt-12">
+  <footer class="text-center py-6 text-xs text-stone-400 border-t border-stone-200 mt-12">
     標準檢量線分析計算機 &copy; 2026 Analytical Chemistry Toolset. 符合 ISO/IEC 17025 數據處理原則.
   </footer>
 
@@ -576,8 +576,8 @@
         r2AlertBanner.classList.add('hidden');
         r2StatusBadge.className = 'text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200';
         r2StatusBadge.textContent = "線性良好";
-        r2Container.className = 'bg-slate-50 border border-slate-200/80 rounded-xl p-3.5 transition-colors';
-        r2Value.className = 'text-base font-bold font-mono text-slate-800 mt-1';
+        r2Container.className = 'bg-[#fcfbf9] border border-stone-200/90 rounded-xl p-3.5 transition-colors';
+        r2Value.className = 'text-base font-bold font-mono text-stone-800 mt-1';
       }
 
       calRangeSpan.textContent = `${minConc} ~ ${maxConc} µg/L`;
@@ -762,7 +762,7 @@
               text: '標準濃度 Concentration (µg/L)',
               font: { weight: 'bold', size: 12 }
             },
-            grid: { color: '#f1f5f9' }
+            grid: { color: '#f5f3ed' }
           },
           y: {
             title: {
@@ -770,7 +770,7 @@
               text: '儀器訊號 Response / Intensity (Y)',
               font: { weight: 'bold', size: 12 }
             },
-            grid: { color: '#f1f5f9' }
+            grid: { color: '#f5f3ed' }
           }
         }
       };
